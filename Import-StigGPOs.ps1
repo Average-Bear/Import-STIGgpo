@@ -64,11 +64,6 @@ function Import-STIGasGPO {
 [Cmdletbinding(SupportsShouldProcess)]
 Param()
 
-    if(!(Test-Path "$GPOPath\GPOs")) {
-        
-        New-Item -ItemType Directory -Path "$GPOPath\GPOs" | Out-Null
-    }
-
     foreach($Path in $STIGPath) {
 
         $BaseFile = (Get-ChildItem "$Path\GPOs").FullName

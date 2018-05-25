@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     Import GPOs from DISA for STIG compliance. 
 
@@ -63,6 +63,11 @@ if($STIGPath -eq $null) {
 function Import-STIGasGPO {
 [Cmdletbinding(SupportsShouldProcess)]
 Param()
+
+    if(!(Test-Path "$GPOPath\GPOs")) {
+        
+        New-Item -ItemType Directory -Path "$GPOPath\GPOs" | Out-Null
+    }
 
     foreach($Path in $STIGPath) {
 
@@ -130,9 +135,14 @@ Param(
     [String]$Date = (Get-Date -Format yyyyMMdd),
 
     [Parameter(DontShow)]
-    [String]$BackupPath = "$GPOPath\GPOs\$(( Get-ChildItem "$($GPOPath)\GPOs" |  Sort -Descending LastWriteTime | Select Name )[0].Name )"
+    [String]$BackupPath = "$GPOPath\GPOs\$(( Get-ChildItem "$($GPOPath)\GPOs" | Sort -Descending LastWriteTime | Select Name )[0].Name )"
 )
     
+    if(!(Test-Path "$GPOPath\MigrationTables")) {
+        
+        New-Item -ItemType Directory -Path "$GPOPath\MigrationTables" | Out-Null
+    }
+
     if(!(Test-Path "$GPOPath\MigrationTables\$Date")) {
         
         New-Item -ItemType Directory -Path "$GPOPath\MigrationTables\$Date" | Out-Null

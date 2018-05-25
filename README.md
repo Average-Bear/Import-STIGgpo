@@ -16,7 +16,7 @@ Unzip the DISA STIG GPO Package files. When selecting a folder for the parameter
        C:\April 2018 DISA STIG GPO Package\DoD Windows Defender Antivirus STIG v1r4
        
 
-This script will generate Migration Tables for ALL existing GPOs. They will be stored in a directory named as the date of execution. You will be prompted to select a Migration Table; only choose a Migration Table if it is required, that is up to you to figure out. 
+This script will generate Migration Tables for ALL existing GPOs and import all GPOs from each respective directory. They will be stored in a directory named as the date of execution. You will be prompted to select a Migration Table; only choose a Migration Table if it is required, that is up to you to figure out. 
 
 You will be prompted with all of the selected GPO names that you will be importing. All user and computers settings are split purposely by DISA. It will generate separate GPOs accordingly. 
 

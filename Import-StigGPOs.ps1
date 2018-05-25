@@ -76,7 +76,7 @@ Param()
 
                 $Dialog2 = New-Object System.Windows.Forms.OpenFileDialog
                 $Dialog2.InitialDirectory = "$GPOPath\MigrationTables"
-                $Dialog2.Title = "Select Migration Table (Not Required)"
+                $Dialog2.Title = "Select Migration Table for $(Split-Path $Path -Leaf) (Not Required)"
                 $Dialog2.Filter = "Migration Tables (*.migtable)|*.migtable"        
                 $Dialog2.Multiselect=$false
                 $Result2 = $Dialog2.ShowDialog((New-Object System.Windows.Forms.Form -Property @{ TopMost = $true }))

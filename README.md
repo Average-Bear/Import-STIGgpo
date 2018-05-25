@@ -1,7 +1,7 @@
 # Import-STIGgpo
 Please, ensure you backup all of your own GPOs (see my Backup-GPO script) before executing anything; use at your own risk... you are liable for any and all negative effects of this script.
 
-Line 31 -- Enter your GPO backups directory here.
+    Line 31 -- Enter your GPO backups directory here.
 
 Unzip the DISA STIG GPO Package files. When selecting a folder for the parameter $STIGPath, choose the parent directory of the STIG you will be importing or, create a variable with these same values to pass into $STIGPath prior to launching the script.
 

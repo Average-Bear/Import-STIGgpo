@@ -5,7 +5,7 @@ Line 31 -- Enter your GPO backups directory here.
 
 Unzip the DISA STIG GPO Package files. When selecting a folder for the parameter $STIGPath, choose the parent directory of the STIG you will be importing or, create a variable with these same values to pass into $STIGPath prior to launching the script.
 
-[E.G.] 
+    [E.G.] 
 
        C:\April 2018 DISA STIG GPO Package\DoD Windows FireWall v1r7
 

@@ -133,11 +133,6 @@ Param(
     [String]$BackupPath = "$GPOPath\GPOs\$(( Get-ChildItem "$($GPOPath)\GPOs" | Sort -Descending LastWriteTime | Select Name )[0].Name )"
 )
     
-    if(!(Test-Path "$GPOPath\MigrationTables")) {
-        
-        New-Item -ItemType Directory -Path "$GPOPath\MigrationTables" | Out-Null
-    }
-
     if(!(Test-Path "$GPOPath\MigrationTables\$Date")) {
         
         New-Item -ItemType Directory -Path "$GPOPath\MigrationTables\$Date" | Out-Null
